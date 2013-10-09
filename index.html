@@ -13,9 +13,9 @@
     // device APIs are available
     //
     function onDeviceReady() {
-         var ref = window.open('http://events.birmingham.gov.uk/today-tomorrow-app/', '_self', 'location=no', 'hidden=yes');
+         var ref = window.open('http://events.birmingham.gov.uk/today-tomorrow-app/', '_self', 'location=no');
          ref.addEventListener('loadstop', function(event) {
-             ref.show(); 
+             document.write('Information loaded'); 
          }
 }
 
