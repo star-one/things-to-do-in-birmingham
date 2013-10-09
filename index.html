@@ -13,12 +13,11 @@
     // device APIs are available
     //
     function onDeviceReady() {
-         var ref = window.open('http://events.birmingham.gov.uk/today-tomorrow-app/', '_blank', 'location=no');
-         ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
-         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-         ref.addEventListener('exit', function(event) { alert(event.type); });
-    }
+         var ref = window.open('http://events.birmingham.gov.uk/today-tomorrow-app/', '_self', 'location=no', 'hidden=yes');
+         ref.addEventListener('loadstop', function(event) {
+             ref.show(); 
+         }
+}
 
     </script>
   </head>
