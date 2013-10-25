@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Things to do in Birmingham</title>
+    <!-- Javascripts
+         ================================================== -->
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/general.js"></script>
+ 
+    <!-- CSS
+         ================================================== -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/wordpress.css" />
+    <link rel="stylesheet" href="css/metro.css" />
+   <!-- Mobile Specific Metas
+  ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+  </head>
+  <body onLoad="updateGeneral()">
+    <div>
+      <div id="page" class="hfeed">
+        <div id="top-bar">
+          <div class="container">
+            <div class="sixteen columns">
+              <header id="branding" role="banner">
+                  <hgroup>
+                    <h1>Things to do in Birmingham</h1>
+                  </hgroup>
+               </header>
+            </div>
+          </div>
+            <div class="container">
+              <div class="sixteen columns">
+                <nav>
+                  <div id="access" role="navigation">
+                    <h2 class="assistive-text section-heading">Main menu</h2>
+                    <div class="skip-link screen-reader-text">Skip to content</div><?php include './menu.php' ?>
+                  </div>
+                  <!-- #access -->
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- #branding -->
+    </div>
+    <div class="container">
+      <div id="main">
+	    <div id="query">
+	    </div>
+		<div id="buttons">
+		  <div>
+	      <input type="button" value="General" onClick="updateGeneral()" />
+		  </div>
+		  <div>
+	      <input type="button" value="Acting under Concern" onClick="updateConcern()" />
+		  </div>
+		  <hr />
+		  <div>
+		  <input type="button" value="About this app" onClick="updateAbout()" />
+          </div>
+		</div>
+     </div>
+    </div>
+    <!-- #main -->
+    <!-- container -->
+    <div id="footer-bar">
+      <div class="container">
+        <div class="sixteen columns">
+          <footer id="colophon" role="contentinfo">
+            <div id="footer">
+              <p>Things to do in Birmingham</p>
+            </div>
+          </footer>
+        </div>
+        <!-- #colophon -->
+      </div>
+    </div>
+	</div>
+    <!-- #page -->
+  </body>
+</html>

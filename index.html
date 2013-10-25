@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>InAppBrowser.addEventListener Example</title>
-
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-         var ref = window.open('http://events.birmingham.gov.uk/today-tomorrow-app/', '_blank', 'location=no');
-         ref.addEventListener('loadstart', function(event) {  });
-         ref.addEventListener('loadstop', function(event) {  });
-         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-         ref.addEventListener('exit', function(event) { alert(event.type); });
-    }
-
-    </script>
-  </head>
-  <body>
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Things to do in Birmingham</title>
+		<link rel="stylesheet" href="css/Things-to-do.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.2.min.css" />
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/jquery.mobile-1.3.2.min.js"></script>
+		<script src="js/general.js"></script>
+		<script>
+		$.mobile.loadPage("http://events.birmingham.gov.uk/today-tomorrow-app/", { showLoadMsg: false } );
+		$.mobile.loadPage("http://events.birmingham.gov.uk/city-centre-app/", { showLoadMsg: false } );
+		$.mobile.loadPage("http://events.birmingham.gov.ukedgbaston-app/", { showLoadMsg: false } );
+		</script>
+	</head>
+	<body onLoad="ChangeView()">
+		<div id="masthead">
+		<img src="img/masthead.png" style="display:block; margin-left:auto; margin-right:auto;">
+		</div>
+		<div id="intro-text" style="width:90%; margin-left:auto; margin-right:auto;">
+		<p>Welcome to our app for events in Birmingham - find out what's on today and tomorrow, in the city centre, and in your area - and submit your own events too! To see full details of individual events, tap through to full events listings on the selector.</p>
+		</div>
+		<div id="buttons" style="width:50%; margin-left:auto; margin-right:auto;">
+	    <select onchange="ChangeView(this.value)" data-native-menu="false">
+          <option value="today">Today and tomorrow</option>
+          <option value="city">City centre</option>
+          <option value="edgbaston">Edgbaston</option>
+          <option value="erdington">Erdington</option>
+          <option value="hallgreen">Hall Green</option>
+          <option value="hodgehill">Hodge Hill</option>
+          <option value="ladywood">Ladywood</option>
+          <option value="northfield">Northfield</option>
+          <option value="perrybarr">Perry Barr</option>
+          <option value="sellyoak">Selly Oak</option>
+          <option value="suttoncoldfield">Sutton Coldfield</option>
+          <option value="yardley">Yardley</option>
+          <option value="submit">Submit an event</option>
+          <option value="full">Full events listings</option>
+        </select>
+		</div>
+	    <div id="query" style="overflow:hidden;height:100%;width:90%; margin-left:auto; margin-right:auto;">
+	    </div>
+	</body>
 </html>
